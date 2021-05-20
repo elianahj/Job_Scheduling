@@ -23,6 +23,8 @@
 
 
 ### 2. Java 구현
+  - 작업의 개수 n = [4,8,16] (작업시간 : 10초 이내의 랜덤값)
+  - 기계의 개수 m = 2 
 
 ### 3. 시간복잡도
   - n개의 작업을 하나씩 가장 빨리 끝나는 기계에 배정하는데 for 루프가 (m-1)번 수행된다.
@@ -32,8 +34,7 @@
     => n x O(m) + O(m) = **O(nm)** 이다.
     
  ### 4. 근사 비율
-   - Approx_JobScheduling 알고리즘의 근사해를 OPT'라 하고, Brute Force의 최적해를 OPT라고 할 때,
-    OPT' <= 2OPT이다.
+   - Approx_JobScheduling 알고리즘의 근사해를 OPT'라 하고, Brute Force의 최적해를 OPT라고 할 때, OPT' < 2OPT 이다.
   
   
   ![image](https://user-images.githubusercontent.com/80517119/118932454-06bf8080-b983-11eb-8dcc-b797e7f49db6.png)
@@ -44,7 +45,7 @@
   - 그러므로 **T <= T'** 이 된다.
   - T <= T'를 이용한 OPT' < 2OPT 증명
   ![image](https://user-images.githubusercontent.com/80517119/118933100-c4e30a00-b983-11eb-9df3-f4e2b46a99a8.png)
-
+  - **따라서 근사해는 최적해의 2배를 넘지 않는다**.
     
     
     
