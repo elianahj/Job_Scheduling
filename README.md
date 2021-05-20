@@ -5,10 +5,9 @@
 
   => 모든 작업을 가장 빨리 종료하기 위헤 현재까지 배정된 작업에 대해서 가장 빨리 끝나는 기계에 새 작업을 배정하는 **그리디** 방법을 사용합니다.
   
-### Approx_JobScheduling 알고리즘
+## Approx_JobScheduling 알고리즘  
 
-
-### 1. 알고리즘 구현과정
+ ### 1. 구현과정
   ![image](https://user-images.githubusercontent.com/80517119/118930557-db3b9680-b980-11eb-995d-1ddd0ca76042.png)
 
 
@@ -24,7 +23,7 @@
   - 3. 가장 늦게 끝나는 작업의 종료시간을 리턴한다.
 
 
-### 2. Java 구현
+ ### 2. Java 구현
   - 작업의 개수 n = [4,8,16] (작업시간 : 10초 이내의 랜덤값)
   - 기계의 개수 m = 2 
   ``` java
@@ -70,7 +69,7 @@ public class Job_Scheduling {
     }
 }
 ```
-### 3. 실행 결과
+ ### 3. 알고리즘 실행 결과
  - n = 4 일 때
 
 
@@ -89,14 +88,22 @@ public class Job_Scheduling {
 ![image](https://user-images.githubusercontent.com/80517119/118951069-bbfb3400-b995-11eb-8b85-5a515c270f71.png)
 
 
-### 4. 시간복잡도
+ ### 4. 시간복잡도
   - n개의 작업을 하나씩 가장 빨리 끝나는 기계에 배정하는데 for 루프가 (m-1)번 수행된다.
   - 모든 기계의 마지막 작업 종료 시간을 살펴 보아야 하므로 O(m)의 시간이 걸린다.
   - 따라서 **시간복잡도는**
     n개의 작업을 배정해야하고, 배열 L을 탐색해야하므로
     => n x O(m) + O(m) = **O(nm)** 이다.
-    
- ### 5. 근사 비율
+
+## Brute Force를 이용한 최적해
+
+  ![image](https://user-images.githubusercontent.com/80517119/118982076-055b7b80-b9b6-11eb-8d63-c269cd45c07f.png)
+
+
+## 근사 비율
+
+   ![image](https://user-images.githubusercontent.com/80517119/118983812-caf2de00-b9b7-11eb-8fe5-94158e949940.png)
+
    - Approx_JobScheduling 알고리즘의 근사해를 OPT'라 하고, Brute Force의 최적해를 OPT라고 할 때, OPT' < 2OPT 이다.
   
   
@@ -109,6 +116,8 @@ public class Job_Scheduling {
   - T <= T'를 이용한 OPT' < 2OPT 증명
   ![image](https://user-images.githubusercontent.com/80517119/118933100-c4e30a00-b983-11eb-9df3-f4e2b46a99a8.png)
   - **따라서 근사해는 최적해의 2배를 넘지 않는다**.
+  
+  
     
     
     
